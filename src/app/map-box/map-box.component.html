@@ -1,0 +1,16 @@
+<div class="container">
+    <mat-list class="sidebar" contenteditable>
+        <img class="logo" src="../../assets/img/logo.png" alt="logo" />
+        <mat-list-item class="list" [ngClass]="{'activeList': selected === vehicle }" *ngFor="let vehicle of vehicles"
+            (click)="flyTo(vehicle)">
+            <!-- <mat-icon matListIcon>folder</mat-icon> -->
+            <p matLine> {{ vehicle.vin }} </p>
+            <p matLine>
+                <span> {{ vehicle.plate }} </span>
+            </p>
+        </mat-list-item>
+    </mat-list>
+    <div class="content" contenteditable>
+        <div class="map" id="map"></div>
+    </div>
+</div>
